@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap');
+@import './mixins';
+@import './variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $df-font;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.flex__form {
+    @include flexstart(center, center, row);
+    background-color: $colorPrimary;
+    min-height: $df-height;
+    width: $df-width;
+
+    #form {
+        @include flexstart(center, space-around, column);
+        padding: 1.5rem;
+        width: 40vw;
+        min-height: 80vh;
+        background-color: $colorForm;
+        border-radius: 20px;
+
+        h1{
+            margin-bottom: 1.5rem;
+        }
+
+        .label__flex {
+            @include flexstart (center, center, column);
+        }
+
+        .info__label {
+            @include flexstart(center, center, column);
+
+            input {
+                width: 20vw;
+                padding: 0.5rem;
+                border-radius: 10px;
+            }
+
+        }
+
+        fieldset {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 35vw;
+            padding: 0.5rem;
+            margin-top: 0.75rem;
+
+            .test{
+                position: absolute;
+                top: 270px;
+                left: 440px;
+                height: 30vh;
+                width: 35vw;
+                border: solid 2px red;
+                visibility: hidden;
+            }
+        }
+
+        #button{
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+        }
+
+        #button:hover{
+            transform: scale(1.2);
+            background-color: rgba(2, 83, 2, 0.616);
+        }
+
+
+        
+    }
+}
